@@ -123,7 +123,7 @@ export default function ContentList({
     } else {
       image = fallbackItemImage; // Default image if 'image' property does not exist
     }
-    return asImageSrc(image, {
+    return asImageSrc(image as any, {
       fit: "crop",
       w: 220,
       h: 320,
