@@ -5,7 +5,7 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import clsx from 'clsx';
 import {PrismicPreview} from '@prismicio/next'
-import {createClient, repositoryName} from '@/prismicio'
+import { createClient, repositoryName } from "@/prismicio";
 
 
 
