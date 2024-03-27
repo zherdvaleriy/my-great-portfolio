@@ -117,7 +117,7 @@ export default function ContentList({
   const contentImages = items.map((item) => {
     let image;
     if ('image' in item.data) { // Type guard
-      image = isFilled.image(item.data.image)
+      image = isFilled.image(item.data.image as any)
         ? item.data.image
         : fallbackItemImage;
     } else {
