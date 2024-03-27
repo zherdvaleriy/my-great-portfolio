@@ -115,16 +115,22 @@ export default function ContentList({
   };
 
   const contentImages = items.map((item) => {
-    const image = isFilled.image(item.data.image)
-      ? item.data.image
-      : fallbackItemImage;
+    let image;
+    if ('image' in item.data) { // Type guard
+      image = isFilled.image(item.data.image)
+        ? item.data.image
+        : fallbackItemImage;
+    } else {
+      image = fallbackItemImage; // Default image if 'image' property does not exist
+    }
     return asImageSrc(image, {
       fit: "crop",
       w: 220,
       h: 320,
       exp: -10,
     });
-  });
+ });
+
 
   // Preload images
   useEffect(() => {
